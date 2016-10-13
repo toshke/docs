@@ -1,8 +1,8 @@
 ---
 title: Authorize
-api_url: /authorize
-api_method: GET
-query_parameters:
+apiPath: /authorize
+apiMethod: GET
+queryParameters:
   - name: response_type
     type: string
     description: "`code` (server-side) or `token` (client -side)"
@@ -22,19 +22,13 @@ query_parameters:
 
 Returns a redirect to the login page of the specified provider (passive authentication).
 
-```shell
-curl "GET http://${account.namespace}/api/authorize"
-  -H "Authorization:"
-```
-
-
 <aside class="warning">
 You must configure a <code>callback URL</code> in the management portal for your client application.
 </aside>
 
 ### Remarks
 
-* If no `connection` is specified, this will redirect to [Auth0 Login Page](${uiURL}/#/login_page) and show the Login widget using the first database connection.
+* If no `connection` is specified, this will redirect to [Auth0 Login Page](${manage_url}/#/login_page) and show the Login widget using the first database connection.
 * If `response_type=token`, after the user authenticates with the provider, this will redirect them to your application callback URL while passing the `access_token` and `id_token` in the address `location.hash`. This is used for Single Page Apps and on Native Mobile SDKs.
 * Additional parameters can be sent that will be passed through to the provider, e.g. `access_type=offline` (for Google refresh tokens) , `display=popup` (for Windows Live popup mode).
 * The `state` parameter will be returned and can be used for XSRF and contextual information (like a return url).
@@ -53,3 +47,12 @@ This endpoint will return a 302 redirect to the [Auth0 Login Page](https://auth0
 ### Enterprise Authentication (SAML and Others)
 
 This endpoint will return a 302 redirect to the enterprise provider specified in `connection`.
+
+<!-- <Samples> -->
+
+#### Authorization Sample
+
+```shell
+curl "GET http://${account.namespace}/api/authorize"
+  -H "Authorization:"
+```
