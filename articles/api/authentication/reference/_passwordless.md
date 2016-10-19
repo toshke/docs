@@ -1,3 +1,6 @@
+# Passwordless
+
+Passwordless connections do not require the user to remember a password. Instead, another mechanism is used to prove identity, such as a one-time password sent every time the user logs in through email or SMS.
 
 ## Start
 
@@ -23,7 +26,7 @@ Content-Type: 'application/json'
   "connection":  "email",
   "email":       "",
   "send":        "",
-  "authParams":
+  "authParams":  
 }
 ```
 
@@ -111,7 +114,7 @@ java
 
 HTTP 400
 
-| Error            | Code       |
+| Error            | Code       | 
 |:-----------------|:-----------|
 | Invalid tenant | {"error":"bad.tenant","error\_description":"error in tenant - tenant validation failed: invalid\_tenant"} |
 | Missing client_id | {"error":"bad.client\_id","error\_description":"Missing required property: client_id"} |

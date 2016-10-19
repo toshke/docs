@@ -69,3 +69,4 @@ For more information, see: <a href="/tokens/delegation">Delegation Tokens</a>.
 | `target `        | string     | the target `client_id` |
 | `scope `         | string     | `openid` or `openid name email` |
 | `api_type`       | string     |             |
+

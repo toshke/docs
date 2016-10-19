@@ -4,7 +4,7 @@ This endpoint will logout a user from the identity provider that they logged in 
 
 ```shell
 GET https://${account.namespace}/logout?
-  returnTo=
+  returnTo=	  
   &client_id=	{client-id}
 ```
 

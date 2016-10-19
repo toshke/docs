@@ -306,8 +306,11 @@ apis:
 
   - title: Authentication API
     url: "/api/authentication"
-    external: true
-    forceFullReload: true
+    expanded: true
+    children:
+      - title: API Explorer
+        url: "/api/authentication/reference"
+        external: true
 
   - title: Management API
     url: "/api/management/v2/tokens"

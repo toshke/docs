@@ -1,5 +1,6 @@
-## Login
-The SAML protocol is mostly used for third-party SaaS applications (e.g. Salesforce, Box, etc.). Auth0 supports SP and IDP Initiated Sign On.
+# SAMLP
+
+The SAML protocol is mostly used for third-party SaaS applications (e.g. Salesforce, Box, etc.). Auth0 supports SP and IDP Initiated Sign On. 
 
 ```shell
 GET https://${account.namespace}/{client_id}?connection=
@@ -46,15 +47,12 @@ All the parameters of the SAML response can be modified with <a href='/rules'>ru
 
 * The SAML request `AssertionConsumerServiceURL` will be used to `POST` back the assertion. It must match the application's `callback_URL`.
 
-## Callback
+## Metadata
 
-This endpoint accepts an IdP-Initiated Sign On SAMLResponse from a SAML Identity Provider. The connection corresponding to the identity provider is specified in the querystring. The user will be redirected to the application that is specified in the SAML Provider IdP-Initiated Sign On section.
+This endpoint returns the SAML 2.0 metadata.
 
 ```shell
-POST https://${account.namespace}/login/callback?connection=
-Content-Type: 'application/x-www-form-urlencoded'
-
-SAMLResponse=
+GET https://${account.namespace}/samlp/metadata/{client_id}
 ```
 
 ```ruby
@@ -79,11 +77,10 @@ java
 
 ### HTTP Request
 
-`POST https://${account.namespace}/login/callback`
+`GET https://${account.namespace}/samlp/metadata/`
 
 ### Query Parameters
 
 | Parameter        | Type       | Description |
 |:-----------------|:-----------|:------------|
-| `connection`     | string     | the name of an identity provider configured to your app |
-| `SAMLResponse`   | string     | an IdP-Initiated Sign On SAML Response |
+| `client_id`      | string     | the `client_id` of your app |
