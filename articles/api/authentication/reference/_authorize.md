@@ -1,6 +1,4 @@
-# Authorize
-
-Returns a redirect to the login page of the specified provider (passive authentication).
+<h5 class="code-snippet-title">Authorization example</h5>
 
 ```shell
 curl "GET http://${account.namespace}/api/authorize"
@@ -32,6 +30,10 @@ php
 ```java
 java
 ```
+
+# Authorize
+
+Returns a redirect to the login page of the specified provider (passive authentication).
 
 ### HTTP Request
 
