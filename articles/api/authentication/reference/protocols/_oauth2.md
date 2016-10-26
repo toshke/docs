@@ -2,9 +2,7 @@
 
 Call these endpoints to generate access tokens.
 
-## Access Token
-
-Given the social provider's `access_token` and the `connection`, this endpoint will authenticate the user with the provider and return a JSON with the `access_token` and an `id_token`. This endpoint only works for Facebook, Google, Twitter and Weibo.
+<h5 class="code-snippet-title">Authorization example</h5>
 
 ```http
 POST https://${account.namespace}/oauth/access_token
@@ -29,6 +27,10 @@ python
 ```csharp
 csharp
 ```
+
+## Access Token
+
+Given the social provider's `access_token` and the `connection`, this endpoint will authenticate the user with the provider and return a JSON with the `access_token` and an `id_token`. This endpoint only works for Facebook, Google, Twitter and Weibo.
 
 <aside class="notice">
 For more information, see: <a href="/tokens/id_token">Auth0 id_token</a>.
