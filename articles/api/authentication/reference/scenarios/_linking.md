@@ -2,6 +2,21 @@
 
 ## Link
 
+Call this endpoint to link the current user to an additional authentication method (e.g. user/password).
+
+
+<aside class="notice">
+For more information, see: <a href="/link-accounts">Linking Accounts</a>.
+</aside>
+
+This endpoint will trigger the login flow to link an existing account with a new one. This will return a 302 redirect to the `connection` that the current user wants to add. The user is identified by the `access_token` that was returned on login success.
+
+#### Additional Parameters
+
+| Parameter        | Type       | Description |
+|:-----------------|:-----------|:------------|
+| `access_token`   | object     | the logged-in user's access token |
+
 ## Unlink
 
 Given a logged-in user's `access_token` and `user_id`, this endpoint will unlink a user's account from identity provider .

@@ -1,5 +1,6 @@
 # Username & Password
 
+
 These connections support active (API-based) authentication and passive (browser based) authentication. Active authentication can be invoked from anywhere (a script, server to server, etc.) while passive authentication occurs in the browser through the login page.
 
 <aside class="warning">
