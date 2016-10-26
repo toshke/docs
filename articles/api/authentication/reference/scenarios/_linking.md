@@ -2,6 +2,8 @@
 
 ## Link
 
+<h5 class="code-snippet-title">Examples</h5>
+
 Call this endpoint to link the current user to an additional authentication method (e.g. user/password).
 
 
@@ -19,35 +21,30 @@ This endpoint will trigger the login flow to link an existing account with a new
 
 ## Unlink
 
-Given a logged-in user's `access_token` and `user_id`, this endpoint will unlink a user's account from identity provider .
+<h5 class="code-snippet-title">Examples</h5>
+
+```http
+POST https://${account.namespace}/login/unlink
+```
 
 ```shell
-POST https://${account.namespace}/login/unlink?Content-Type: 'application/json'
+POST https://${account.namespace}/login/unlink
+Content-Type: 'application/json'
 {
   "access_token": "",
   "user_id":      ""
 }
 ```
 
-```ruby
-ruby
+```javascript
+javascript
 ```
 
-```python
-python
+```javascript
+javascript
 ```
 
-```csharp
-csharp
-```
-
-```php
-php
-```
-
-```java
-java
-```
+Given a logged-in user's `access_token` and `user_id`, this endpoint will unlink a user's account from identity provider .
 
 <aside class="notice">
 For more information, see: <a href="/link-accounts/auth-api#unlinking-accounts">Unlinking Accounts</a>.
@@ -65,10 +62,6 @@ For more information, see: <a href="/link-accounts/auth-api#unlinking-accounts">
   }
 ]
 ```
-
-### HTTP Request
-
-`POST https://${account.namespace}/unlink`
 
 ### Query Parameters
 

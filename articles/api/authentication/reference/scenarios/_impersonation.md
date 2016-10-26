@@ -1,7 +1,10 @@
 # Impersonation
 
+<h5 class="code-snippet-title">Examples</h5>
 
-Use this endpoint to obtain an impersonation URL to login as another user.
+```http
+POST https://${account.namespace}/users/{user_id}/impersonate
+```
 
 ```shell
 curl https://${account.namespace}/users/{user_id}/impersonate
@@ -14,26 +17,15 @@ curl https://${account.namespace}/users/{user_id}/impersonate
 		&additionalParameters[response_type]=code
 		&additionalParameters[state]="
 ```
-
-```ruby
-ruby
-```
-
-```python
-python
+```javascript
+javascript
 ```
 
 ```csharp
 csharp
 ```
 
-```php
-php
-```
-
-```java
-java
-```
+Use this endpoint to obtain an impersonation URL to login as another user.
 
 <aside class="notice">
 For more information, see: <a href="/api/management/v1/use-cases#impersonation">Impersonation</a>.
@@ -51,10 +43,6 @@ For more information, see: <a href="/api/management/v1/use-cases#impersonation">
   }
 ]
 ```
-
-### HTTP Request
-
-`POST https://${account.namespace}/users/{user_id}impersonate`
 
 ### Query Parameters
 

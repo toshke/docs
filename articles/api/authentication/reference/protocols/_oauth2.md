@@ -2,7 +2,9 @@
 
 Call these endpoints to generate access tokens.
 
-<h5 class="code-snippet-title">Authorization example</h5>
+## Authorize
+
+<h5 class="code-snippet-title">Examples</h5>
 
 ```shell
 curl "GET http://${account.namespace}/api/authorize"
@@ -31,8 +33,6 @@ javascript
 ```
 
 > This request will return a 302 redirect to the login page.
-
-## Authorize
 
 Returns a redirect to the login page of the specified provider (passive authentication).
 
@@ -86,8 +86,9 @@ For more information, see: <a href="/refresh-token">Refresh Tokens</a>.
 | `scope`          | string     | `openid offline_access` |
 
 
+## Access Token
 
-<h5 class="code-snippet-title">Authorization example</h5>
+<h5 class="code-snippet-title">Examples</h5>
 
 ```http
 POST https://${account.namespace}/oauth/access_token
@@ -112,8 +113,6 @@ python
 ```csharp
 csharp
 ```
-
-## Access Token
 
 Given the social provider's `access_token` and the `connection`, this endpoint will authenticate the user with the provider and return a JSON with the `access_token` and an `id_token`. This endpoint only works for Facebook, Google, Twitter and Weibo.
 
@@ -145,8 +144,7 @@ For more information, see: <a href="/tokens/id_token">Auth0 id_token</a>.
 
 ## Resource Owner
 
-Given the user's credentials, this endpoint will authenticate the user with the provider and return a JSON object with the `access_token` and an `id_token`.
-
+<h5 class="code-snippet-title">Examples</h5>
 
 ```http
 POST https://${account.namespace}/oauth/ro
@@ -178,6 +176,8 @@ python
 ```csharp
 csharp
 ```
+
+Given the user's credentials, this endpoint will authenticate the user with the provider and return a JSON object with the `access_token` and an `id_token`.
 
 <aside class="notice">
 This endpoint only works for database connections, passwordless connections, Active Directory/LDAP, Windows Azure AD and ADFS. For more information, see: <a href="/protocols#oauth-resource-owner-password-credentials-grant">OAuth Resource Owner Password Credentials Grant</a>.
@@ -211,7 +211,7 @@ This endpoint only works for database connections, passwordless connections, Act
 
 ## Token
 
-An `access_token` is required to call the Auth0 API. You can generate one by authenticating with your global `client_id` and `client_secret`. The token will be valid for 24 hours.
+<h5 class="code-snippet-title">Examples</h5>
 
 ```http
 `POST https://${account.namespace}/oauth/token`
@@ -228,6 +228,8 @@ python
 ```csharp
 csharp
 ```
+
+An `access_token` is required to call the Auth0 API. You can generate one by authenticating with your global `client_id` and `client_secret`. The token will be valid for 24 hours.
 
 <aside class="notice">
 For more information, see: <a href="/tokens/access_token">Auth0 access_token</a>.

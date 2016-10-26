@@ -4,21 +4,35 @@ Passwordless connections do not require the user to remember a password. Instead
 
 ## Start
 
+<h5 class="code-snippet-title">Examples</h5>
+
+```http
+POST https://${account.namespace}/passwordless/start
+```
+
+```shell
+shell
+```
+
+```javascript
+javascript
+```
+
+```csharp
+csharp
+```
+
 Given a user's `phone_number`, this endpoint will send an SMS message containing a verification code. You can then authenticate this user with the [Resource Owner](#resource-owner) endpoint, specifying `phone_number` as the `username` and `code` as  the `password`.
 
 <aside class="notice">
 For more information, see: <a href="/connections/passwordless">Passwordless Authentication</a>.
 </aside>
 
-### HTTP Request
-
-`POST https://${account.namespace}/passwordless/start`
-
-
-
 ### Email
 
-```shell
+<h5 class="code-snippet-title">Examples</h5>
+
+```http
 POST https://${account.namespace}/passwordless/start
 Content-Type: 'application/json'
 {
@@ -30,24 +44,16 @@ Content-Type: 'application/json'
 }
 ```
 
-```ruby
-ruby
+```shell
+shell
 ```
 
-```python
-python
+```javascript
+javascript
 ```
 
 ```csharp
 csharp
-```
-
-```php
-php
-```
-
-```java
-java
 ```
 
 ### Query Parameters
@@ -70,9 +76,9 @@ Given a user's email address, this endpoint will send an email containing either
 
 ### SMS
 
-Given the user's `phone_number`, this endpoint will send an SMS message containing a verification code. You can then authenticate this user using the [`/oauth/ro`](#ro) endpoint by specifying `phone_number` as the `username` and `code` as the `password`.
+<h5 class="code-snippet-title">Examples</h5>
 
-```shell
+```http
 POST https://${account.namespace}/passwordless/start
 Content-Type: 'application/json'
 {
@@ -82,25 +88,19 @@ Content-Type: 'application/json'
 }
 ```
 
-```ruby
-ruby
+```shell
+shell
 ```
 
-```python
-python
+```javascript
+javascript
 ```
 
 ```csharp
 csharp
 ```
 
-```php
-php
-```
-
-```java
-java
-```
+Given the user's `phone_number`, this endpoint will send an SMS message containing a verification code. You can then authenticate this user using the [`/oauth/ro`](#ro) endpoint by specifying `phone_number` as the `username` and `code` as the `password`.
 
 ### Query Parameters
 
@@ -130,11 +130,11 @@ HTTP 400
 
 
 
-### SMS
+### SMS: Authorize
 
-Login a user with their phone number and verification code (active authentication).
+<h5 class="code-snippet-title">Examples</h5>
 
-```shell
+```http
 POST https://${account.namespace}/oauth/ro
 Content-Type: 'application/json'
 {
@@ -147,25 +147,19 @@ Content-Type: 'application/json'
 }
 ```
 
-```ruby
-ruby
+```shell
+shell
 ```
 
-```python
-python
+```javascript
+javascript
 ```
 
 ```csharp
 csharp
 ```
 
-```php
-php
-```
-
-```java
-java
-```
+Login a user with their phone number and verification code (active authentication).
 
 > This command returns a JSON object in this format:
 

@@ -2,37 +2,27 @@
 
 ## Login
 
-Redirect a user to the login page for the specified connection.
+<h5 class="code-snippet-title">Examples</h5>
 
-The SAML protocol is mostly used for third-party SaaS applications (e.g. Salesforce, Box, etc.). Auth0 supports SP and IDP Initiated Sign On.
-
-```shell
+```http
 GET https://${account.namespace}/{client_id}?connection=
 ```
 
-```ruby
-ruby
+```shell
+shell
 ```
 
-```python
-python
+```javascript
+javascript
 ```
 
 ```csharp
 csharp
 ```
 
-```php
-php
-```
+Redirect a user to the login page for the specified connection.
 
-```java
-java
-```
-
-### HTTP Request
-
-`GET https://${account.namespace}/{client_id}`
+The SAML protocol is mostly used for third-party SaaS applications (e.g. Salesforce, Box, etc.). Auth0 supports SP and IDP Initiated Sign On.
 
 ### Query Parameters
 
@@ -53,35 +43,25 @@ All the parameters of the SAML response can be modified with <a href='/rules'>ru
 
 ## Metadata
 
-This endpoint returns the SAML 2.0 metadata.
+<h5 class="code-snippet-title">Examples</h5>
 
-```shell
+```http
 GET https://${account.namespace}/samlp/metadata/{client_id}
 ```
 
-```ruby
-ruby
+```shell
+shell
 ```
 
-```python
-python
+```javascript
+javascript
 ```
 
 ```csharp
 csharp
 ```
 
-```php
-php
-```
-
-```java
-java
-```
-
-### HTTP Request
-
-`GET https://${account.namespace}/samlp/metadata/`
+This endpoint returns the SAML 2.0 metadata.
 
 ### Query Parameters
 
@@ -92,38 +72,25 @@ java
 
 ## Callback
 
-This endpoint accepts an IdP-Initiated Sign On SAMLResponse from a SAML Identity Provider. The connection corresponding to the identity provider is specified in the querystring. The user will be redirected to the application that is specified in the SAML Provider IdP-Initiated Sign On section.
+<h5 class="code-snippet-title">Examples</h5>
+
+```http
+POST https://${account.namespace}/login/callback?connection=
+```
 
 ```shell
-POST https://${account.namespace}/login/callback?connection=
-Content-Type: 'application/x-www-form-urlencoded'
-
-SAMLResponse=
+shell
 ```
 
-```ruby
-ruby
-```
-
-```python
-python
+```javascript
+javascript
 ```
 
 ```csharp
 csharp
 ```
 
-```php
-php
-```
-
-```java
-java
-```
-
-### HTTP Request
-
-`POST https://${account.namespace}/login/callback`
+This endpoint accepts an IdP-Initiated Sign On SAMLResponse from a SAML Identity Provider. The connection corresponding to the identity provider is specified in the querystring. The user will be redirected to the application that is specified in the SAML Provider IdP-Initiated Sign On section.
 
 ### Query Parameters
 

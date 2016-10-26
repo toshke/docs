@@ -5,6 +5,9 @@ title: Authorization API Explorer
 <div class="api-section" data-section="none">
   <%= include('./_introduction') %>
 </div>
+<div class="api-section" data-section="none">
+  <%= include('./_errors') %>
+</div>
 
 <span data-section-label="scenarios">Scenarios</span>
 

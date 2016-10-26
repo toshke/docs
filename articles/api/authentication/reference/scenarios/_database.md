@@ -10,8 +10,7 @@ These endpoints only work for database connections.
 
 ## Signup
 
-Given a user's credentials, and a `connection`, this endpoint will create a new user using active authentication.
-
+<h5 class="code-snippet-title">Examples</h5>
 
 ```http
 POST https://${account.namespace}/dbconnections/signup
@@ -35,6 +34,8 @@ javascript
 ```csharp
 csharp
 ```
+
+Given a user's credentials, and a `connection`, this endpoint will create a new user using active authentication.
 
 > This command returns a JSON object in this format:
 
@@ -63,7 +64,7 @@ You authenticate a database user with the [Resource Owner](#resource-owner) endp
 
 ## Change Password
 
-Given a user's `email` address and a `connection`, Auth0 will send a change password email.
+<h5 class="code-snippet-title">Examples</h5>
 
 ```http
 POST https://${account.namespace}/dbconnections/change_password
@@ -88,16 +89,12 @@ javascript
 csharp
 ```
 
-
+Given a user's `email` address and a `connection`, Auth0 will send a change password email.
 
 
 <aside class="notice">
 For more information, see: <a href='/connections/database/password-change'>Changing a User's Password</a>.
 </aside>
-
-### HTTP Request
-
-`POST https://${account.namespace}/dbconnections/change_password`
 
 ### Query Parameters
 

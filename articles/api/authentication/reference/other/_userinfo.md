@@ -1,6 +1,6 @@
 # UserInfo
 
-Given the Auth0 `access token` obtained during login, this endpoint returns a user's profile.
+<h5 class="code-snippet-title">Examples</h5>
 
 ```http
 GET https://${account.namespace}/userinfo
@@ -18,6 +18,8 @@ python
 ```csharp
 csharp
 ```
+
+Given the Auth0 `access token` obtained during login, this endpoint returns a user's profile.
 
 <aside class="notice">
 For more information, see: <a href="/user-profile/user-profile-details#api">User Profile: In-Depth Details - API</a>.
