@@ -1,4 +1,8 @@
-# Unlink
+# Account Linking
+
+## Link
+
+## Unlink
 
 Given a logged-in user's `access_token` and `user_id`, this endpoint will unlink a user's account from identity provider .
 
@@ -34,7 +38,7 @@ java
 For more information, see: <a href="/link-accounts/auth-api#unlinking-accounts">Unlinking Accounts</a>.
 </aside>
 
-> This command returns a JSON in this format:
+> This command returns a JSON object in this format:
 
 ```json
 [

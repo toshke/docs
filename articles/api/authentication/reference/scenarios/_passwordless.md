@@ -26,7 +26,7 @@ Content-Type: 'application/json'
   "connection":  "email",
   "email":       "",
   "send":        "",
-  "authParams":  
+  "authParams":
 }
 ```
 
@@ -114,7 +114,7 @@ java
 
 HTTP 400
 
-| Error            | Code       | 
+| Error            | Code       |
 |:-----------------|:-----------|
 | Invalid tenant | {"error":"bad.tenant","error\_description":"error in tenant - tenant validation failed: invalid\_tenant"} |
 | Missing client_id | {"error":"bad.client\_id","error\_description":"Missing required property: client_id"} |
@@ -127,3 +127,66 @@ HTTP 400
 | Missing phone_number | {"error":"bad.phone\_number","error\_description":"Missing required property: phone_number"} |
 | Invalid phone_number format | {"error":"bad.phone\_number","error_description":"String does not match pattern: ^\\+[0-9]{1,15}$"} |
 | SMS Provider errors | {"error":"sms\_provider\_error","error\_description":"<SPECIFIC_PROVIDER_MESSAGE> (Code: <SPECIFIC_PROVIDER_CODE>)"} |
+
+
+
+### SMS
+
+Login a user with their phone number and verification code (active authentication).
+
+```shell
+POST https://${account.namespace}/oauth/ro
+Content-Type: 'application/json'
+{
+  "client_id":   "{client_id}",
+  "connection":  "sms",
+  "grant_type":  "password",
+  "username":    "",
+  "password":    "",
+  "scope":       ""
+}
+```
+
+```ruby
+ruby
+```
+
+```python
+python
+```
+
+```csharp
+csharp
+```
+
+```php
+php
+```
+
+```java
+java
+```
+
+> This command returns a JSON object in this format:
+
+```json
+[
+  {
+    "id": 1
+  },
+  {
+    "id": 2
+  }
+]
+```
+
+### Query Parameters
+
+| Parameter        | Type       | Description |
+|:-----------------|:-----------|:------------|
+| `client_id`      | string     | the `client_id` of your app |
+| `connection`     | string     | `sms` |
+| `grant_type`     | string     | `password` |
+| `username`      | string     | the user's phone number |
+| `password`      | string     | the user's verification code  |
+| `scope`          | string     | `openid or openid name email` |

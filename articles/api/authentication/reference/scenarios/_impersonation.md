@@ -1,16 +1,13 @@
-# Users
+# Impersonation
 
-This endpoint generates a link that can be used only once to log in as a specific user (useful for troubleshooting).
-
-## Impersonate
 
 Use this endpoint to obtain an impersonation URL to login as another user.
 
 ```shell
 curl https://${account.namespace}/users/{user_id}/impersonate
-	-H "Authorization: Bearer {access_token}" 
-	-H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8" 
-	--data 
+	-H "Authorization: Bearer {access_token}"
+	-H "Content-Type: application/x-www-form-urlencoded; charset=UTF-8"
+	--data
 		"protocol={}
 		&impersonator_id={}
 		&client_id={client_id}
@@ -42,7 +39,7 @@ java
 For more information, see: <a href="/api/management/v1/use-cases#impersonation">Impersonation</a>.
 </aside>
 
-> This command returns a JSON in this format:
+> This command returns a JSON object in this format:
 
 ```json
 [
@@ -74,7 +71,7 @@ This endpoint can only be used with <b>Global Client</b> credentials.
 
 ### Remarks
 
-* To distinguish between real logins and impersonation logins, the profile of the impersonated user will contain additional impersonated and impersonator properties. 
+* To distinguish between real logins and impersonation logins, the profile of the impersonated user will contain additional impersonated and impersonator properties.
 
 For example:
 

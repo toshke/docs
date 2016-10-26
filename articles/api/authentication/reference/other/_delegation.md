@@ -4,7 +4,7 @@ Delegated authentication is used when an entity wants to call another entity on 
 
 Given an existing token, this endpoint will generate a new token signed with the `target` client's secret. This is used to flow the identity of the user from the application to an API or across different APIs that are secured with different secrets.
 
-```shell
+```http
 POST https://${account.namespace}/delegation
 Content-Type: 'application/json'
 {
@@ -18,11 +18,11 @@ Content-Type: 'application/json'
 }
 ```
 
-```ruby
+```shell
 ruby
 ```
 
-```python
+```javascript
 python
 ```
 
@@ -30,15 +30,7 @@ python
 csharp
 ```
 
-```php
-php
-```
-
-```java
-java
-```
-
-> This command returns a JSON in this format:
+> This command returns a JSON object in this format:
 
 ```json
 [
@@ -55,10 +47,6 @@ java
 For more information, see: <a href="/tokens/delegation">Delegation Tokens</a>.
 </aside>
 
-### HTTP Request
-
-`POST https://${account.namespace}/delegation`
-
 ### Query Parameters
 
 | Parameter        | Type       | Description |
@@ -69,4 +57,3 @@ For more information, see: <a href="/tokens/delegation">Delegation Tokens</a>.
 | `target `        | string     | the target `client_id` |
 | `scope `         | string     | `openid` or `openid name email` |
 | `api_type`       | string     |             |
-
