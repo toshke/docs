@@ -2,11 +2,25 @@
 
 Passwordless connections do not require the user to remember a password. Instead, another mechanism is used to prove identity, such as a one-time password sent every time the user logs in through email or SMS.
 
-## Email
+## Start
 
-<h5 class="code-snippet-title">Examples</h5>
+Given a user's `phone_number`, this endpoint will send an SMS message containing a verification code. You can then authenticate this user with the [Resource Owner](#resource-owner) endpoint, specifying `phone_number` as the `username` and `code` as  the `password`.
+
+<aside class="notice">
+For more information, see: <a href="/connections/passwordless">Passwordless Authentication</a>.
+</aside>
+
+### HTTP Request
+
+`POST https://${account.namespace}/passwordless/start`
+
+### Email
 
 ```http
+http
+```
+
+```shell
 POST https://${account.namespace}/passwordless/start
 Content-Type: 'application/json'
 {
@@ -14,23 +28,13 @@ Content-Type: 'application/json'
   "connection":  "email",
   "email":       "",
   "send":        "",
-  "authParams":
+  "authParams":  
 }
-```
-
-```shell
-shell
 ```
 
 ```javascript
 javascript
 ```
-
-```csharp
-csharp
-```
-
-Passwordless authentication by email is done by calling the `passwordless/start` endpoint as shown here. Upon calling this endpoint, Auth0 will send an email to the provided address with a code or a link to click to complete the authorization process. More information can be found on in our [documentation](/docs/connections/passwordless/email).
 
 ### Query Parameters
 
@@ -50,11 +54,13 @@ Given a user's email address, this endpoint will send an email containing either
 
 * A verification code ("send":"code"). You can then authenticate this user using the [`/oauth/ro`](#ro) endpoint by specifying `email` as the `username` and `code` as the `password`.
 
-## SMS: Start
-
-<h5 class="code-snippet-title">Examples</h5>
+### SMS
 
 ```http
+http
+```
+
+```shell
 POST https://${account.namespace}/passwordless/start
 Content-Type: 'application/json'
 {
@@ -64,16 +70,8 @@ Content-Type: 'application/json'
 }
 ```
 
-```shell
-shell
-```
-
 ```javascript
 javascript
-```
-
-```csharp
-csharp
 ```
 
 Given the user's `phone_number`, this endpoint will send an SMS message containing a verification code. You can then authenticate this user using the [`/oauth/ro`](#ro) endpoint by specifying `phone_number` as the `username` and `code` as the `password`.
@@ -103,60 +101,3 @@ HTTP 400
 | Missing phone_number | {"error":"bad.phone\_number", "error\_description":"Missing required property: phone_number"} |
 | Invalid phone_number format | {"error":"bad.phone\_number", "error_description":"String does not match pattern: ^\\+[0-9]{1,15}$"} |
 | SMS Provider errors | {"error":"sms\_provider\_error", "error\_description":"<SPECIFIC_PROVIDER_MESSAGE> (Code: <SPECIFIC_PROVIDER_CODE>)"} |
-
-
-
-## SMS: Authorize
-
-<h5 class="code-snippet-title">Examples</h5>
-
-```http
-POST https://${account.namespace}/oauth/ro
-Content-Type: 'application/json'
-{
-  "client_id":   "{client_id}",
-  "connection":  "sms",
-  "grant_type":  "password",
-  "username":    "",
-  "password":    "",
-  "scope":       ""
-}
-```
-
-```shell
-shell
-```
-
-```javascript
-javascript
-```
-
-```csharp
-csharp
-```
-
-Login a user with their phone number and verification code (active authentication).
-
-> This command returns a JSON object in this format:
-
-```json
-[
-  {
-    "id": 1
-  },
-  {
-    "id": 2
-  }
-]
-```
-
-### Query Parameters
-
-| Parameter        | Type       | Description |
-|:-----------------|:-----------|:------------|
-| `client_id`      | string     | the `client_id` of your app |
-| `connection`     | string     | `sms` |
-| `grant_type`     | string     | `password` |
-| `username`      | string     | the user's phone number |
-| `password`      | string     | the user's verification code  |
-| `scope`          | string     | `openid or openid name email` |

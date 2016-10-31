@@ -10,25 +10,11 @@ Content-Type: 'application/json'
 }
 ```
 
-```shell
-ruby
-```
-
 ```javascript
-python
+javascript
 ```
 
-```csharp
-csharp
-```
-
-This endpoint validates a JSON Web Token (signature and expiration) and returns the user information associated with the user id `sub` property of the token.
-
-<aside class="notice">
-For more information, see: <a href="/user-profile/user-profile-details#api">User Profile: In-Depth Details - API</a>.
-</aside>
-
-> This command returns a JSON object in this format:
+> This command returns a JSON in this format:
 
 ```json
 [
@@ -40,6 +26,16 @@ For more information, see: <a href="/user-profile/user-profile-details#api">User
   }
 ]
 ```
+
+This endpoint validates a JSON Web Token (signature and expiration) and returns the user information associated with the user id `sub` property of the token.
+
+<aside class="notice">
+For more information, see: <a href="/user-profile/user-profile-details#api">User Profile: In-Depth Details - API</a>.
+</aside>
+
+### HTTP Request
+
+`POST https://${account.namespace}/tokeninfo`
 
 ### Query Parameters
 

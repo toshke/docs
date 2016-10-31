@@ -1,30 +1,49 @@
 # Logout
 
-<h5 class="code-snippet-title">Examples</h5>
-
 ```http
-GET https://${account.namespace}/logout?
-  returnTo=
-  &client_id=	{client-id}
+http
 ```
 
 ```shell
-shell
+GET https://${account.namespace}/logout?
+  returnTo=	  
+  &client_id=	{client-id}
 ```
 
 ```javascript
 javascript
 ```
 
+<!-- ```ruby
+ruby
+```
+
+```python
+python
+```
+
 ```csharp
 csharp
 ```
+
+```php
+php
+```
+
+```java
+java
+``` -->
+
 
 This endpoint will logout a user from the identity provider that they logged in with.
 
 <aside class="notice">
 For more information, see: <a href="/logout"> Logout</a>.
 </aside>
+
+### HTTP Request
+
+`GET https://${account.namespace}/logout?`
 
 ### Query Parameters
 

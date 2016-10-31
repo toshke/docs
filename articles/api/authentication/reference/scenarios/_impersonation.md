@@ -1,9 +1,11 @@
-# Impersonation
+# Users
 
-<h5 class="code-snippet-title">Examples</h5>
+This endpoint generates a link that can be used only once to log in as a specific user (useful for troubleshooting).
+
+## Impersonate
 
 ```http
-POST https://${account.namespace}/users/{user_id}/impersonate
+http
 ```
 
 ```shell
@@ -17,21 +19,12 @@ curl https://${account.namespace}/users/{user_id}/impersonate
 		&additionalParameters[response_type]=code
 		&additionalParameters[state]="
 ```
+
 ```javascript
 javascript
 ```
 
-```csharp
-csharp
-```
-
-Use this endpoint to obtain an impersonation URL to login as another user.
-
-<aside class="notice">
-For more information, see: <a href="/api/management/v1/use-cases#impersonation">Impersonation</a>.
-</aside>
-
-> This command returns a JSON object in this format:
+> This command returns a JSON in this format:
 
 ```json
 [
@@ -43,6 +36,16 @@ For more information, see: <a href="/api/management/v1/use-cases#impersonation">
   }
 ]
 ```
+
+Use this endpoint to obtain an impersonation URL to login as another user.
+
+<aside class="notice">
+For more information, see: <a href="/api/management/v1/use-cases#impersonation">Impersonation</a>.
+</aside>
+
+### HTTP Request
+
+`POST https://${account.namespace}/users/{user_id}impersonate`
 
 ### Query Parameters
 

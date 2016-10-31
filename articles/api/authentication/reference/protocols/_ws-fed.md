@@ -1,32 +1,28 @@
 # WS-Fed
 
-The WS-Fed protocol is used for Microsoft applications (e.g.: Office365, Dynamics CRM, etc.).
-
-## Login
-
-<h5 class="code-snippet-title">Examples</h5>
-
 ```http
-GET https://${account.namespace}/wsfed/{client-id}
+http
 ```
 
 ```shell
-shell
+GET https://${account.namespace}/wsfed/{client-id}
 ```
 
 ```javascript
 javascript
 ```
 
-```csharp
-csharp
-```
+The WS-Fed protocol is used for Microsoft applications (e.g.: Office365, Dynamics CRM, etc.).
 
 This endpoint accepts a WS-Fed request to initiate a login.
 
 <aside class="notice">
 For more information, see: <a href="/protocols#ws-federation">WS-Federation Protocols</a>.
 </aside>
+
+### HTTP Request
+
+`GET https://${account.namespace}/wsfed/{client-id}`
 
 ### Query Parameters
 
@@ -51,22 +47,20 @@ All the parameters of the SAML assertion can be modified through <a href='/rules
 
 ## FederationMetadata
 
-<h5 class="code-snippet-title">Examples</h5>
-
 ```http
-GET https://${account.namespace}/wsfed/{client-id}/FederationMetadata/2007-06/FederationMetadata.xml
+http
 ```
 
 ```shell
-shell
+GET https://${account.namespace}/wsfed/{client-id}/FederationMetadata/2007-06/FederationMetadata.xml
 ```
 
 ```javascript
 javascript
 ```
 
-```csharp
-csharp
-```
-
 This endpoint returns the WS-Federation metadata.
+
+### HTTP Request
+
+`GET https://${account.namespace}/wsfed/{client-id}/FederationMetadata/2007-06/FederationMetadata.xml`
