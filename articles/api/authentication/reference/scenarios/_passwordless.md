@@ -92,17 +92,17 @@ HTTP 400
 
 | Error            | Code       |
 |:-----------------|:-----------|
-| Invalid tenant | {"error":"bad.tenant","error\_description":"error in tenant - tenant validation failed: invalid\_tenant"} |
-| Missing client_id | {"error":"bad.client\_id","error\_description":"Missing required property: client_id"} |
-| Missing connection | {"error":"bad.connection","error_description":"Missing required property: connection"} |
-| Connection does not exist | {"error":"bad.connection","error_description":"Connection does not exist"} |
-| Disabled&nbsp;connection | {"error":"bad.connection","error_description":"Connection is disabled"} |
-| Invalid connection | {"error":"bad.connection","error_description":"Invalid connection strategy. It must either be a passwordless connection"} |
-| Invalid authParams | {"error":"bad.authParams","error_description":"error in authParams - invalid type: string (expected object)"} |
-| Invalid paramaters | {"error":"bad.request","error\_description":"the following properties are not allowed: <INVALID_PARAMETER_VALUE>"} |
-| Missing phone_number | {"error":"bad.phone\_number","error\_description":"Missing required property: phone_number"} |
-| Invalid phone_number format | {"error":"bad.phone\_number","error_description":"String does not match pattern: ^\\+[0-9]{1,15}$"} |
-| SMS Provider errors | {"error":"sms\_provider\_error","error\_description":"<SPECIFIC_PROVIDER_MESSAGE> (Code: <SPECIFIC_PROVIDER_CODE>)"} |
+| Invalid tenant | {"error":"bad.tenant", "error\_description":"error in tenant - tenant validation failed: invalid\_tenant"} |
+| Missing client_id | {"error":"bad.client\_id", "error\_description":"Missing required property: client_id"} |
+| Missing connection | {"error":"bad.connection", "error_description":"Missing required property: connection"} |
+| Connection does not exist | {"error":"bad.connection", "error_description":"Connection does not exist"} |
+| Disabled&nbsp;connection | {"error":"bad.connection", "error_description":"Connection is disabled"} |
+| Invalid connection | {"error":"bad.connection", "error_description":"Invalid connection strategy. It must either be a passwordless connection"} |
+| Invalid authParams | {"error":"bad.authParams", "error_description":"error in authParams - invalid type: string (expected object)"} |
+| Invalid paramaters | {"error":"bad.request", "error\_description":"the following properties are not allowed: <INVALID_PARAMETER_VALUE>"} |
+| Missing phone_number | {"error":"bad.phone\_number", "error\_description":"Missing required property: phone_number"} |
+| Invalid phone_number format | {"error":"bad.phone\_number", "error_description":"String does not match pattern: ^\\+[0-9]{1,15}$"} |
+| SMS Provider errors | {"error":"sms\_provider\_error", "error\_description":"<SPECIFIC_PROVIDER_MESSAGE> (Code: <SPECIFIC_PROVIDER_CODE>)"} |
 
 
 
