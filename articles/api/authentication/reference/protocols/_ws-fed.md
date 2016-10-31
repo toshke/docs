@@ -2,7 +2,7 @@
 
 The WS-Fed protocol is used for Microsoft applications (e.g.: Office365, Dynamics CRM, etc.).
 
-# Login
+## Login
 
 <h5 class="code-snippet-title">Examples</h5>
 

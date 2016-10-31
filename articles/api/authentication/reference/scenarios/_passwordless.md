@@ -2,33 +2,7 @@
 
 Passwordless connections do not require the user to remember a password. Instead, another mechanism is used to prove identity, such as a one-time password sent every time the user logs in through email or SMS.
 
-## Start
-
-<h5 class="code-snippet-title">Examples</h5>
-
-```http
-POST https://${account.namespace}/passwordless/start
-```
-
-```shell
-shell
-```
-
-```javascript
-javascript
-```
-
-```csharp
-csharp
-```
-
-Given a user's `phone_number`, this endpoint will send an SMS message containing a verification code. You can then authenticate this user with the [Resource Owner](#resource-owner) endpoint, specifying `phone_number` as the `username` and `code` as  the `password`.
-
-<aside class="notice">
-For more information, see: <a href="/connections/passwordless">Passwordless Authentication</a>.
-</aside>
-
-### Email
+## Email
 
 <h5 class="code-snippet-title">Examples</h5>
 
@@ -56,6 +30,8 @@ javascript
 csharp
 ```
 
+Passwordless authentication by email is done by calling the `passwordless/start` endpoint as shown here. Upon calling this endpoint, Auth0 will send an email to the provided address with a code or a link to click to complete the authorization process. More information can be found on in our [documentation](/docs/connections/passwordless/email).
+
 ### Query Parameters
 
 | Parameter        | Type       | Description |
@@ -74,7 +50,7 @@ Given a user's email address, this endpoint will send an email containing either
 
 * A verification code ("send":"code"). You can then authenticate this user using the [`/oauth/ro`](#ro) endpoint by specifying `email` as the `username` and `code` as the `password`.
 
-### SMS
+## SMS: Start
 
 <h5 class="code-snippet-title">Examples</h5>
 
@@ -130,7 +106,7 @@ HTTP 400
 
 
 
-### SMS: Authorize
+## SMS: Authorize
 
 <h5 class="code-snippet-title">Examples</h5>
 
